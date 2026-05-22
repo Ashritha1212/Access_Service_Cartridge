@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com:modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com="http://www.mslv.com/studio/core/model/common" xmlns:data="http://www.oracle.com/communications/studio/core/model/common/data" xmlns:inv="http://www.mslv.com/studio/inventory/model/specification" xmlns="http://www.mslv.com/studio/inventory/model/specification" xmlns:layout="http://xmlns.oracle.com/communications/sce/poms/model/layout" xsi:type="inv:ServiceSpecificationType" name="Access_CFS">
+  <com:saveVersion>3</com:saveVersion>
+  <com:baseEntityRef>
+    <com:entity>Service</com:entity>
+    <com:entityType>inventoryEntity</com:entityType>
+    <com:relationship>unknown</com:relationship>
+  </com:baseEntityRef>
+  <com:id>5EzM5XM3Qu+qiOzYEhZwRQ</com:id>
+  <data:dataElementNode virtual="true">
+    <com:id>5EzM5XM3Qu+qiOzYEhZwRQ</com:id>
+    <com:elementType>oracle.communications.studio.model.data.StudioModelDataElement</com:elementType>
+    <data:name>Access_CFS</data:name>
+    <data:displayName lang="[default]">Access_CFS</data:displayName>
+    <data:primitiveType>none</data:primitiveType>
+  </data:dataElementNode>
+  <data:dataElementDetails xsi:type="data:dataElementCommonDetail">
+    <com:id>G3k2P+iAR1mGEWe5K5RPqw</com:id>
+    <com:elementType>oracle.communications.studio.model.data.StudioModelDataElementCommonDetails</com:elementType>
+    <data:dataElementId>5EzM5XM3Qu+qiOzYEhZwRQ</data:dataElementId>
+    <data:defaultValue></data:defaultValue>
+    <data:key></data:key>
+    <data:deprecated>false</data:deprecated>
+    <data:sensitive>false</data:sensitive>
+    <data:minLength>0</data:minLength>
+    <data:maxLength>40</data:maxLength>
+    <data:minMultiplicity>0</data:minMultiplicity>
+    <data:maxMultiplicity>-1</data:maxMultiplicity>
+  </data:dataElementDetails>
+  <data:dataElementDetails xsi:type="layout:uiConfigurationType">
+    <com:id>gNX16ozYSUeEvOaDcnXRmw</com:id>
+    <com:elementType>oracle.communications.sce.poms.model.data.LayoutDetailType</com:elementType>
+    <data:dataElementId>5EzM5XM3Qu+qiOzYEhZwRQ</data:dataElementId>
+    <layout:layout>
+      <layout:page>Service Editor</layout:page>
+      <layout:panel>Service Edit Panel</layout:panel>
+    </layout:layout>
+    <layout:layout>
+      <layout:page>Service Summary</layout:page>
+      <layout:panel>Service Summary Panel</layout:panel>
+    </layout:layout>
+  </data:dataElementDetails>
+  <inv:rule>
+    <com:entity>MAP_CUSTOM_SERVICE_ACTION_TO_UIM_ACTION</com:entity>
+    <com:entityType>rst</com:entityType>
+    <com:relationship>com.mslv.studio.inventory.specification.REL_RULE_TRIGGER</com:relationship>
+  </inv:rule>
+  <inv:rule>
+    <com:entity>SUSPEND_ACCESS_SERVICE_EXP</com:entity>
+    <com:entityType>rst</com:entityType>
+    <com:relationship>com.mslv.studio.inventory.specification.REL_RULE_TRIGGER</com:relationship>
+  </inv:rule>
+  <inv:inventoryConfig>
+    <com:entity>Access_CFS_Configuration</com:entity>
+    <com:entityType>configuration</com:entityType>
+    <com:relationship>com.mslv.studio.inventory.service.inventoryConfigRef</com:relationship>
+  </inv:inventoryConfig>
+</com:modelEntity>

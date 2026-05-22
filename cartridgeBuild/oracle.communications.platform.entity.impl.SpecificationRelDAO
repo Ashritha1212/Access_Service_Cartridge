@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extent>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-0" version="0">
+    <field name="name">"CONFIG_SPEC_TO_CONFIG_SPEC"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration.Access_Devices.configItem-3049801314#1.0.0.0.0_b0</field>
+    <field name="description">""</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">1</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-1" version="0">
+    <field name="name">"CONFIG_SPEC_TO_CONFIG_SPEC"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration.Access_Devices.configItem-3049801314#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration.PeDevice.configItem-1914324772#1.0.0.0.0_b0</field>
+    <field name="description">""</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">1</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-2" version="0">
+    <field name="name">"CONFIG_SPEC_TO_CONFIG_SPEC"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration.PeDevice.configItem-1914324772#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration.PePort.configItem-3722922239#1.0.0.0.0_b0</field>
+    <field name="description">""</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">0</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-3" version="0">
+    <field name="name">"CONFIG_SPEC_TO_CONFIG_SPEC"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration.Access_Devices.configItem-3049801314#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration.SwitchDevice.configItem-3637398174#1.0.0.0.0_b0</field>
+    <field name="description">""</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">1</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">0</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-4" version="0">
+    <field name="name">"CONFIG_SPEC_TO_CONFIG_SPEC"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration.Access_Devices.configItem-3049801314#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_RFS_Configuration.configuration.OLTDevice.configItem-4132063128#1.0.0.0.0_b0</field>
+    <field name="description">""</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">2</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">0</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-5" version="0">
+    <field name="name">"com.mslv.studio.inventory.service.inventoryConfigRef"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.SpecificationDAO-11</field>
+    <field name="child">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.SpecificationDAO-12</field>
+    <field name="description">"null"</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">0</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-6" version="0">
+    <field name="name">"CONFIG_SPEC_TO_CONFIG_SPEC"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_CFS_Configuration.configuration#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_CFS_Configuration.configuration.Access_CFS_SCI.configItem-2115126514#1.0.0.0.0_b0</field>
+    <field name="description">""</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">1</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-7" version="0">
+    <field name="name">"com.mslv.studio.inventory.service.inventoryConfigRef"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.SpecificationDAO-14</field>
+    <field name="child">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.SpecificationDAO-0</field>
+    <field name="description">"null"</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">0</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-8" version="0">
+    <field name="name">"CustomerParty To Individual"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/CustomerParty.party#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.SpecificationDAO-17</field>
+    <field name="description">null</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">1</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="autoGeneratedQuantity">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-9" version="0">
+    <field name="name">"CustomerParty To Organization"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/CustomerParty.party#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.SpecificationDAO-18</field>
+    <field name="description">null</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">1</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">1</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="autoGeneratedQuantity">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-10" version="0">
+    <field name="name">"accessDevice To accessDeviceInterfaces"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/accessDevice.device#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.SpecificationDAO-19</field>
+    <field name="description">null</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">1</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-11" version="0">
+    <field name="name">"oltDevice To oltDeviceInterfaces"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/oltDevice.device#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.SpecificationDAO-20</field>
+    <field name="description">null</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">1</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.SpecificationRelDAO" oid="oracle.communications.platform.entity.impl.SpecificationRelDAO-12" version="0">
+    <field name="name">"peDevice To peDeviceInterfaces"</field>
+    <field name="parent">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/peDevice.device#1.0.0.0.0_b0</field>
+    <field name="child">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.SpecificationDAO-5</field>
+    <field name="description">null</field>
+    <field format="enum_name" name="relationshipType">COMPOSITE</field>
+    <field format="enum_name" name="status">ACTIVE</field>
+    <field name="orderInGroup">0</field>
+    <field name="childrenToParentMin">0</field>
+    <field name="childrenToParentMax">0</field>
+    <field name="parentsToChildMin">1</field>
+    <field name="parentsToChildMax">1</field>
+    <field name="id">0</field>
+    <field name="parentage">0</field>
+  </object>
+</extent>

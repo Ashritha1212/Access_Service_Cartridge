@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inventory="http://xmlns.oracle.com/communications/studio/model/inventory" xmlns:model="http://xmlns.oracle.com/communications/studio/model">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="inventory:DeviceInterfaceSpecification" id="dis=peDeviceInterfaces" type="dis" typeName="Device Interface Specification" name="peDeviceInterfaces" resource="\TSARO_Access_Service\model\peDeviceInterfaces.deviceInterface">
+    <note lang="default"/>
+    <extends>
+      <relation ref="ie=DeviceInterface" type="Inventory Entity" name="Dependency" kind="Entity">
+        <target name="DeviceInterface" typeName="Inventory Entity"/>
+      </relation>
+    </extends>
+    <project>
+      <relation ref="ivprj=TSARO_Access_Service" type="Inventory Project" name="Dependency">
+        <target name="TSARO_Access_Service" typeName="Inventory Project"/>
+      </relation>
+    </project>
+    <dataElements>
+      <element id="dis=peDeviceInterfaces+dataElement=H+ZKl9BRQs+MkWhAXhrCaw~customerInterfaceNumber" type="dataElement" typeName="Data Element" kind="Element" name="customerInterfaceNumber" path="/customerInterfaceNumber" inherited="true">
+        <displayName lang="default">customerInterfaceNumber</displayName>
+        <displayName lang="default">customerInterfaceNumber</displayName>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="true">1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <minLength inherited="true">0</minLength>
+        <maxLength inherited="true">255</maxLength>
+        <base>
+          <relation ref="ie=DeviceInterface+dataElement=customerInterfaceNumber" type="Data Element" name="Type" kind="Element">
+            <target name="customerInterfaceNumber" typeName="Data Element"/>
+            <inEntity name="DeviceInterface" typeName="Inventory Entity"/>
+          </relation>
+        </base>
+        <dataElements/>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="dis=peDeviceInterfaces+dataElement=H+ZKl9BRQs+MkWhAXhrCaw~description" type="dataElement" typeName="Data Element" kind="Element" name="description" path="/description" inherited="true">
+        <displayName lang="default">description</displayName>
+        <displayName lang="default">description</displayName>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="true">1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <minLength inherited="true">0</minLength>
+        <maxLength inherited="true">255</maxLength>
+        <base>
+          <relation ref="ie=DeviceInterface+dataElement=description" type="Data Element" name="Type" kind="Element">
+            <target name="description" typeName="Data Element"/>
+            <inEntity name="DeviceInterface" typeName="Inventory Entity"/>
+          </relation>
+        </base>
+        <dataElements/>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="dis=peDeviceInterfaces+dataElement=H+ZKl9BRQs+MkWhAXhrCaw~id" type="dataElement" typeName="Data Element" kind="Element" name="id" path="/id" inherited="true">
+        <displayName lang="default">id</displayName>
+        <displayName lang="default">id</displayName>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="true">1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <minLength inherited="true">0</minLength>
+        <maxLength inherited="true">255</maxLength>
+        <base>
+          <relation ref="ie=DeviceInterface+dataElement=id" type="Data Element" name="Type" kind="Element">
+            <target name="id" typeName="Data Element"/>
+            <inEntity name="DeviceInterface" typeName="Inventory Entity"/>
+          </relation>
+        </base>
+        <dataElements/>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="dis=peDeviceInterfaces+dataElement=H+ZKl9BRQs+MkWhAXhrCaw~interfaceNumber" type="dataElement" typeName="Data Element" kind="Element" name="interfaceNumber" path="/interfaceNumber" inherited="true">
+        <displayName lang="default">interfaceNumber</displayName>
+        <displayName lang="default">interfaceNumber</displayName>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="true">1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <minLength inherited="true">0</minLength>
+        <maxLength inherited="true">255</maxLength>
+        <base>
+          <relation ref="ie=DeviceInterface+dataElement=interfaceNumber" type="Data Element" name="Type" kind="Element">
+            <target name="interfaceNumber" typeName="Data Element"/>
+            <inEntity name="DeviceInterface" typeName="Inventory Entity"/>
+          </relation>
+        </base>
+        <dataElements/>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="dis=peDeviceInterfaces+dataElement=H+ZKl9BRQs+MkWhAXhrCaw~name" type="dataElement" typeName="Data Element" kind="Element" name="name" path="/name" inherited="true">
+        <displayName lang="default">name</displayName>
+        <displayName lang="default">name</displayName>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="true">1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <minLength inherited="true">0</minLength>
+        <maxLength inherited="true">255</maxLength>
+        <base>
+          <relation ref="ie=DeviceInterface+dataElement=name" type="Data Element" name="Type" kind="Element">
+            <target name="name" typeName="Data Element"/>
+            <inEntity name="DeviceInterface" typeName="Inventory Entity"/>
+          </relation>
+        </base>
+        <dataElements/>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="dis=peDeviceInterfaces+dataElement=H+ZKl9BRQs+MkWhAXhrCaw~nominalSpeed" type="dataElement" typeName="Data Element" kind="Element" name="nominalSpeed" path="/nominalSpeed" inherited="true">
+        <displayName lang="default">nominalSpeed</displayName>
+        <displayName lang="default">nominalSpeed</displayName>
+        <note lang="default">An estimate of the interface's current bandwidth in bits per second.</note>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="true">1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <minLength inherited="true">0</minLength>
+        <maxLength inherited="true">40</maxLength>
+        <base>
+          <relation ref="ie=DeviceInterface+dataElement=nominalSpeed" type="Data Element" name="Type" kind="Element">
+            <target name="nominalSpeed" typeName="Data Element"/>
+            <inEntity name="DeviceInterface" typeName="Inventory Entity"/>
+          </relation>
+        </base>
+        <dataElements/>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <primitiveType>decimal</primitiveType>
+      </element>
+      <element id="dis=peDeviceInterfaces+dataElement=H+ZKl9BRQs+MkWhAXhrCaw~vendorInterfaceNumber" type="dataElement" typeName="Data Element" kind="Element" name="vendorInterfaceNumber" path="/vendorInterfaceNumber" inherited="true">
+        <displayName lang="default">vendorInterfaceNumber</displayName>
+        <displayName lang="default">vendorInterfaceNumber</displayName>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="true">1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <minLength inherited="true">0</minLength>
+        <maxLength inherited="true">255</maxLength>
+        <base>
+          <relation ref="ie=DeviceInterface+dataElement=vendorInterfaceNumber" type="Data Element" name="Type" kind="Element">
+            <target name="vendorInterfaceNumber" typeName="Data Element"/>
+            <inEntity name="DeviceInterface" typeName="Inventory Entity"/>
+          </relation>
+        </base>
+        <dataElements/>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <primitiveType>string</primitiveType>
+      </element>
+    </dataElements>
+    <relatedSpecificationList/>
+  </entity>
+</model:Model>

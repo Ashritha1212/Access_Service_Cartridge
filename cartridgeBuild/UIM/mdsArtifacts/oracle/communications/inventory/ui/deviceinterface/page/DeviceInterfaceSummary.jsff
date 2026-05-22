@@ -1,0 +1,629 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+/* Copyright (c) 2009, 2015, Oracle and/or its affiliates. 
+All rights reserved.*/
+
+/*
+    DESCRIPTION
+
+    NOTES
+     <other useful comments, qualifications, etc.>
+
+    MODIFIED    (MM/DD/YY)
+       vijkukum  03/12/15 - for adding flow interface context menu support for
+                            ipam assignments
+    raattulu    4/04/13 - Accessibility changes completed
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:f="http://java.sun.com/jsf/core">
+		   
+<c:set var="inventoryUIBundle" value="#{adfBundle['oracle.communications.inventory.ui.common.bundle.InventoryUIBundle']}"/>
+<c:set var="bundle" value="#{adfBundle['oracle.communications.inventory.ui.common.bundle.InventoryUIOverrideBundle']}"/>                 
+<af:pageTemplate viewId="/oracle/communications/platform/templates/fragments/CommsUIShellMainArea.jspx" id="pt1">
+    <f:facet name="localArea">
+        <af:panelStretchLayout id="pgl1"  binding="#{backingBeanScope.DI_summary_panelGroupLayout}" topHeight="#{pageFlowScope.DeviceInterfaceSummaryBean.topHeight}"> 
+          <f:facet name="top">
+             <af:panelGroupLayout id="pgsl23" layout="scroll">
+                <af:panelGroupLayout id="pgl42" layout="horizontal" halign="left" rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.previewLayout}">
+                    <af:outputText id="otbi" styleClass="invCommonText" noWrap="true"
+                                   value="#{pageFlowScope.DeviceInterfaceSummaryBean.renderBILabel ? inventoryUIBundle.BUSINESS_INTERACTION_LABEL : null}"/>
+                    <af:menuBar id="menuBar1">
+                          <af:menu id="BIContextMenu" binding="#{backingBeanScope.InventoryMenuBean.biContextMenu}" styleClass="invSummaryMenu"
+                                   rendered="#{!(pageFlowScope.DeviceInterfaceSummaryBean.popupMode)}"   />
+                    </af:menuBar>
+                    <af:popup id="BISearchPopup" binding="#{backingBeanScope.businessInteractionSearch2}" contentDelivery="lazyUncached">
+                        <af:dialog id="BISearchPopup_d1" type="none"
+                                   title="#{inventoryUIBundle.BUSINESS_INTERACTION_SEARCH}">
+                            <af:panelStretchLayout id="psl_1" styleClass="invCommonPanelStretchLayout">
+                                <f:facet name="center">
+                                   <af:region value="#{bindings.BusinessInteractionSearchResultsFlow1.regionModel}" id="BISP_r2"/>
+                                </f:facet>
+                            </af:panelStretchLayout>
+                        </af:dialog>
+                        <af:clientListener method="goRefreshEntity" type="popupClosed"/>
+                        <af:serverListener type="refreshEntity" method="#{pageFlowScope.DeviceInterfaceSummaryBean.afterBusinessInteractionSelectionChange}"/>
+                    </af:popup>
+                </af:panelGroupLayout>
+                  <!-- Display Info Starts-->
+                  
+                    
+            </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="center">
+        
+          <af:panelHeader text="#{pageFlowScope.DeviceInterfaceSummaryBean.summaryText}" id="sdh1" styleClass="invSummaryPanelHeader" >
+                    <!-- Display Info Ends-->
+                    <f:facet name="menuBar">
+                      <af:group id="g2" rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.previewLayout}">
+                        <af:menuBar id="menuBar2">
+                          <!-- Menus Start-->
+                            <af:menu id="menu5" binding="#{backingBeanScope.InventoryMenuBean.relatedPagesMenu}" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}" styleClass="invSummaryMenu"/>  
+                        </af:menuBar> 
+                        <!-- Menus End-->
+                      </af:group>
+                    </f:facet> 
+            <!--Device Interface Informations Starts -->
+            <af:panelGroupLayout layout="scroll">
+				<af:panelTabbed id="pt7" dimensionsFrom="auto" styleClass="AFStretchWidth" binding="#{backingBeanScope.diTabPanel}">
+					<af:showDetailItem text="#{inventoryUIBundle.GENERAL_INFORMATION}" id="GeneralInfoTab" styleClass="AFStretchWidth" binding="#{backingBeanScope.deviceinterface_generalInfoTab}" 
+					 rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.renderGeneralInfoTab}" disclosureListener="#{pageFlowScope.DeviceInterfaceSummaryBean.discloseTab}" 
+					 disclosed="#{pageFlowScope.DeviceInterfaceSummaryBean.selectedTab == inventoryUIBundle.GENERAL_INFORMATION}">
+						<af:showDetailHeader text="#{pageFlowScope.DeviceInterfaceSummaryBean.informationText}" disclosed="true" id="sdh2" 
+						 rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.disableDIInfoPortlet and pageFlowScope.DeviceInterfaceSummaryBean.selectedTab == inventoryUIBundle.GENERAL_INFORMATION}">
+						  <f:facet name="context"/>
+						  <f:facet name="menuBar"/>
+						  <f:facet name="toolbar">
+							<af:commandButton text="#{inventoryUIBundle.EDIT}" action="edit" id="cb1" actionListener="#{bindings.openSubTaskForEdit.execute}"
+											  rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.previewLayout  &amp;&amp; securityContext.userGrantedResource['resourceType=PAGE_ACTION;resourceName=DeviceInterface.EDIT;action=view']}" 
+											  disabled="#{!securityContext.taskflowViewable['/WEB-INF/oracle/communications/inventory/ui/deviceinterface/flow/DeviceInterfaceEditFlow.xml#DeviceInterfaceEditFlow']}"
+											  accessKey="#{inventoryUIBundle.EDIT_ACCESS_KEY}">
+								<af:setActionListener from="false" to="#{addMode}"/>
+							</af:commandButton> 
+						  </f:facet>
+						  <f:facet name="legend"/>
+						  <f:facet name="info"/>
+						  <af:panelFormLayout id="di" maxColumns="2" rows="2" labelWidth="33%" fieldWidth="67%" >
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.ID}"
+													 id="di-id">
+							  <af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.id}" id="ot1"/>
+							</af:panelLabelAndMessage>
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.NAME}"
+													 id="di-name">
+							  <af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.name}" id="ot2"/>
+							</af:panelLabelAndMessage>
+							
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.RATE_CODE}"
+													 id="di-ratecode" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}">
+							  <af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.rateCode != null ? pageFlowScope.DeviceInterfaceSummaryBean.entityObject.rateCode.name : ''}" id="diRateCode"/>
+							</af:panelLabelAndMessage>
+							
+							 <af:panelLabelAndMessage label="#{inventoryUIBundle.BIT_RATE}"
+													 id="di-bitrate">
+							  <af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.bitRateDisplay}" id="diBitRate"/>
+							</af:panelLabelAndMessage>
+							
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.DESCRIPTION}"
+													 id="di-description">
+							  <af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.description}" id="ot22"/>
+							</af:panelLabelAndMessage>
+							
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.RESOURCE_ASSIGNMENT_STATUS}"
+													 id="di-ras">
+							  <af:outputText id="ot8" value="#{pageFlowScope.DeviceInterfaceSummaryBean.resourceAssignmentStatus}"/>
+								<!--RMI 618 Start--><af:switcher defaultFacet="false" facetName="#{pageFlowScope.DeviceInterfaceSummaryBean.popupMode}" id="swas618">
+								<f:facet name="false">
+									<af:commandImageLink action="#{pageFlowScope.DeviceInterfaceSummaryBean.getSummaryAction}"
+														 actionListener="#{pageFlowScope.DeviceInterfaceSummaryBean.registerRecentItem}"
+														 disabled="#{pageFlowScope.DeviceInterfaceSummaryBean.consumerBIDisabled}"
+														 id="bid4"
+														 shortDesc="#{pageFlowScope.DeviceInterfaceSummaryBean.consumerBIShortDesc}"
+														 text="#{pageFlowScope.DeviceInterfaceSummaryBean.consumerBILabel}">
+									  <af:setActionListener from="#{pageFlowScope.DeviceInterfaceSummaryBean.assignmentBI.oid}"
+															to="#{objectId}"/>
+									</af:commandImageLink>
+								  </f:facet>
+								<f:facet name="true">
+								<af:outputText id="swftas618" value="#{pageFlowScope.DeviceInterfaceSummaryBean.consumerBILabel}"/>
+								</f:facet>
+								</af:switcher>
+								<af:outputText id="consumerBIDueDate" value="#{pageFlowScope.DeviceInterfaceSummaryBean.consumerBIEffectiveDate}"/>
+								<!--RMI 618 End-->
+							</af:panelLabelAndMessage>
+									
+							<af:panelLabelAndMessage id="di-adminstate" label="#{inventoryUIBundle.INVENTORY_STATUS}">
+								  <af:outputText id="ot7" value="#{pageFlowScope.DeviceInterfaceSummaryBean.inventoryStatus}"/>
+								<!--RMI 618 Start--><af:switcher defaultFacet="false" facetName="#{pageFlowScope.DeviceInterfaceSummaryBean.popupMode}" id="swis618">
+								<f:facet name="false">
+								<af:commandImageLink action="#{pageFlowScope.DeviceInterfaceSummaryBean.getSummaryAction}"
+													 actionListener="#{pageFlowScope.DeviceInterfaceSummaryBean.registerRecentItem}"
+													 disabled="#{pageFlowScope.DeviceInterfaceSummaryBean.installingBIDisabled}"
+													 id="bid3"
+													 shortDesc="#{pageFlowScope.DeviceInterfaceSummaryBean.installingBIShortDesc}"
+													 text="#{pageFlowScope.DeviceInterfaceSummaryBean.installingBILabel}">
+								  <af:setActionListener from="#{pageFlowScope.DeviceInterfaceSummaryBean.inventoryStatusBI.oid}"
+														to="#{objectId}"/>
+								</af:commandImageLink>
+								  </f:facet>
+								<f:facet name="true">
+								<af:outputText id="swftis618" value="#{pageFlowScope.DeviceInterfaceSummaryBean.installingBILabel}"/>
+								</f:facet>
+								</af:switcher>
+								<af:outputText id="installingBIDueDate" value="#{pageFlowScope.DeviceInterfaceSummaryBean.installingBIEffectiveDate}"/>
+								<!--RMI 618 End-->
+							</af:panelLabelAndMessage>
+									
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.SPECIFICATION}"
+												   id="di-specification">
+								<af:commandImageLink action="SpecificationSummary" id="clSpec" actionListener="#{bindings.openSubTaskForSpec.execute}"
+												text="#{pageFlowScope.DeviceInterfaceSummaryBean.specDisplayName}"
+													 shortDesc="#{inventoryUIBundle.LINK_FOR_SPECIFICATION_SUMMARY}">
+								   
+									<af:setActionListener from="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.specification.oid}" to="#{specObjectId}"/>
+								</af:commandImageLink>
+						   </af:panelLabelAndMessage>
+						   
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.INTERFACE_NUMBER}"
+													 id="di-interfacenumber">
+							  <af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.interfaceNumber}"
+											 id="ot5"/>
+							</af:panelLabelAndMessage>
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.CUSTOMER_INTERFACE_NUMBER}"
+													 id="di-cin">
+							  <af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.customerInterfaceNumber}"
+											 id="ot3"/>
+							</af:panelLabelAndMessage>                
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.VENDOR_INTERFACE_NUMBER}"
+													 id="di-vin" >
+							  <af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.vendorInterfaceNumber}"
+											 id="ot6"/>
+							</af:panelLabelAndMessage>
+										   
+						   <af:panelLabelAndMessage label="#{inventoryUIBundle.PARENT_DEVICE_INTERFACE}" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.parentInterface != null}"
+												   id="di-parentdi">
+								<af:commandImageLink action="ParentDeviceInterfaceSummary" id="diSummary"
+													 actionListener="#{bindings.openSubTaskForDISummary.execute}"
+													 text="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.parentInterface.displayInfo}"
+													 shortDesc="#{inventoryUIBundle.LINK_FOR_SUMMARY}">
+									<af:setActionListener from="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.parentInterface.oid}" to="#{requestScope.oid}"/>
+							   </af:commandImageLink>
+						   </af:panelLabelAndMessage>
+						   <af:panelLabelAndMessage label="#{inventoryUIBundle.TERMINATION_TYPE}"
+													 id="fi-t" rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}">
+							  <af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.terminationTypeDisplay}"
+											 id="ot9"/>
+							</af:panelLabelAndMessage>
+							
+							<af:panelLabelAndMessage id = "plsbc1" label="#{inventoryUIBundle.TERMINATES_PACKET_RIDER}" rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}">
+								<af:outputText id="slot" value="#{pageFlowScope.DeviceInterfaceSummaryBean.terminatesPacketRiderSummaryDisplay}" rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}"/>                    
+							</af:panelLabelAndMessage>
+											
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.LAST_MODIFIED_DATE}" id="di-lmd" rendered="false">
+								<af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.lastModifiedDate}"
+											   id="ot4">
+								   <af:convertDateTime pattern="#{pageFlowScope.DeviceInterfaceSummaryBean.dateTimeFormat}"/>
+								</af:outputText>            
+							</af:panelLabelAndMessage>
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.LAST_MODIFIED_USER}" id="di-lmu" rendered="false">
+								<af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.lastModifiedUser}"
+											   id="ot12"/>
+							</af:panelLabelAndMessage>               
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.CREATED_DATE}" id="di-crd" rendered="false">
+									<af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.createdDate}" id="ot13">
+									  <af:convertDateTime pattern="#{pageFlowScope.DeviceInterfaceSummaryBean.dateTimeFormat}"/>
+									</af:outputText>
+							</af:panelLabelAndMessage>
+							<af:panelLabelAndMessage label="#{inventoryUIBundle.CREATED_USER}" id="di-cru" rendered="false">
+									<af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.createdUser}" id="ot14"/>
+							</af:panelLabelAndMessage>
+						  </af:panelFormLayout>
+						  
+						  <!-- show detail collapsible section for external identity -->
+						  <af:showDetail disclosed="true" id="sd1"
+										 disclosedText="#{inventoryUIBundle.LOGICAL_DEVICE}" undisclosedText="#{inventoryUIBundle.LOGICAL_DEVICE}"
+										 styleClass="AFStretchWidth">
+							<af:panelFormLayout id="di-ldlayout" maxColumns="2" rows="2" labelWidth="33%" fieldWidth="67%">                             
+							   <af:panelLabelAndMessage label="#{inventoryUIBundle.LOGICAL_DEVICE}" id="di-ld">
+								  <af:commandImageLink action="LogicalDeviceSummary" id="ldSummary" actionListener="#{bindings.openSubTaskForLDSummary.execute}"
+													   text="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.parentLogicalDevice.displayInfo}"
+													   shortDesc="#{inventoryUIBundle.LOGICAL_DEVICE_SUMMARY_LINK}">
+									
+									<af:setActionListener from="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.parentLogicalDevice.oid}" to="#{requestScope.oid}"/>
+								  </af:commandImageLink>
+								</af:panelLabelAndMessage>
+
+								<af:panelLabelAndMessage label="#{inventoryUIBundle.DEVICE_IDENTIFIER}" id="di-di">
+												<af:outputText value="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.parentLogicalDevice.deviceIdentifier}" id="di-deviceIdntId"/>
+								</af:panelLabelAndMessage>
+							   
+								<af:panelLabelAndMessage label="#{inventoryUIBundle.NETWORK_ENTITY_LOCATION}" id="di-netentloc">
+											<af:commandImageLink action="LocationDetails" id="plSumm" actionListener="#{bindings.openSubTaskForLocationDetails.execute}"
+																 text="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.parentLogicalDevice.networkLocationEntityCode}"
+																 shortDesc="#{inventoryUIBundle.PROPERTY_LOCATION_DETAILS_LINK}">
+											   
+												<af:setActionListener from="#{pageFlowScope.DeviceInterfaceSummaryBean.entityObject.parentLogicalDevice.propertyLocation.oid}" to="#{requestScope.oid}"/>
+											</af:commandImageLink>
+								 </af:panelLabelAndMessage>
+								 
+								<af:panelLabelAndMessage label="#{pageFlowScope.DeviceInterfaceSummaryBean.serviceLocationLabel}" id="di-netentlocadd">
+												<af:outputFormatted value= "#{pageFlowScope.DeviceInterfaceSummaryBean.addressLabel1}" 
+																	id="di-netentitylocadd"/>
+								</af:panelLabelAndMessage>
+
+							</af:panelFormLayout>
+						  </af:showDetail>
+						  
+						</af:showDetailHeader>
+						<af:spacer width="10" height="10" id="s2"/>
+						<!-- Device Interface Hierarchy -->
+						<af:showDetailHeader text="#{pageFlowScope.DeviceInterfaceSummaryBean.hierarchyText}"
+									 disclosed="true" id="sdh3" 
+									 rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.disableDIHierarchyPortlet and pageFlowScope.DeviceInterfaceSummaryBean.selectedTab == inventoryUIBundle.GENERAL_INFORMATION}"
+									 styleClass="invSummaryShowDetailHeader">
+						  <f:facet name="context"/>
+						  <f:facet name="menuBar"/>
+						  <f:facet name="toolbar"/>
+						  <f:facet name="legend"/>
+						  <f:facet name="info"/>
+						  <af:panelCollection id="pc21" styleClass="AFStretchWidth">
+							<f:facet name="menus"></f:facet>
+							<f:facet name="toolbar"/>
+							<f:facet name="statusbar"/>
+							<af:treeTable value="#{pageFlowScope.DeviceInterfaceTreeBean.treeModel}"
+										  var="node" rowSelection="single"
+										  styleClass="AFStretchWidth"
+										  id="DeviceInterfaceHierarchyTreeTable" expandAllEnabled="#{pageFlowScope.DeviceInterfaceTreeBean.expandAllEnabled}"
+										  fetchSize="#{pageFlowScope.DeviceInterfaceTreeBean.fetchSize}"
+										  contextMenuSelect="true" contentDelivery="immediate"
+										  selectionListener="#{pageFlowScope.DeviceInterfaceTreeBean.nodeSelectedEvent}"
+										  binding="#{backingBeanScope.DI_treeBinding}"
+										  disclosedRowKeys="#{pageFlowScope.DeviceInterfaceTreeBean.treeDisclosedRowKeys}"
+										  rowBandingInterval="0"
+										  horizontalGridVisible="false"
+										  summary="#{inventoryUIBundle.DEVICE_INTERFACE_HIERARCHY_TREETABLE}">
+							  <f:facet name="nodeStamp">
+								<af:column sortable="false" id="column2" width="500"
+										   rowHeader="unstyled"
+										   headerText="#{pageFlowScope.DeviceInterfaceSummaryBean.interfaceColumnText}">
+								  <af:panelGroupLayout id="pgl5">
+									<af:image source="#{node.data.icon}"
+											  id="nodeIcon"
+											  styleClass="invSummaryImage"
+											  shortDesc="icon"/>
+										<af:switcher id="idSwitcher" defaultFacet="false" facetName="#{pageFlowScope.DeviceInterfaceTreeBean.disableNodeLink}">
+										<f:facet name="false">           
+											<af:commandImageLink action="#{pageFlowScope.DeviceInterfaceTreeBean.view}" id="cl1" actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.registerRecentItem}"
+																 text="#{node.data.label}"
+																 shortDesc="#{inventoryUIBundle.LINK_FOR_SUMMARY}">
+												
+											</af:commandImageLink>
+										</f:facet> 
+										<f:facet name="true">           
+											<af:outputText value="#{node.data.label}" id="ot42"/>
+										</f:facet> 
+									 </af:switcher>
+								  </af:panelGroupLayout>
+								</af:column>
+							  </f:facet>
+							  <!--10285312  changes Start  -->
+								<af:column sortable="false" headerText="#{inventoryUIBundle.SPECIFICATION}" id="column3" filterable="false">
+								 <af:commandImageLink action="SpecificationSummary" id="cl16" actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.registerTreeSpec}"
+													  text="#{node.data.specName}"
+													  shortDesc="#{inventoryUIBundle.LINK_FOR_SPECIFICATION_SUMMARY}">
+							   
+									<af:setActionListener from="#{node.data.object.specification.oid}" to="#{specObjectId}"/>
+								 </af:commandImageLink>
+								</af:column> 
+								
+								<af:column sortable="false" headerText="#{inventoryUIBundle.RESERVATION}" id="column4" filterable="false" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}">
+								  <af:outputText value="#{node.data.reservation}" id="ot314"/>
+								</af:column>
+								
+								<af:column sortable="false" headerText="#{inventoryUIBundle.CONDITION}" id="column5" filterable="false" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}">
+								  <af:outputText value="#{node.data.condition}" id="ot315"/>
+								</af:column>
+								
+								<af:column sortable="false" headerText="#{inventoryUIBundle.INVENTORY_STATUS}" id="column6" filterable="false">
+								  <af:outputText value="#{node.data.invStatus}" id="ot313"/>
+							   <!--RMI618 Tree changes -->
+							   <af:outputText value="#{pageFlowScope.DeviceInterfaceTreeBean.inventoryStatusBIDueDate}" id="isDueDate"/>
+							   <af:switcher id="isSwitch" defaultFacet="false" facetName="#{pageFlowScope.DeviceInterfaceSummaryBean.popupMode}">
+									<f:facet name="false">
+								 <af:commandImageLink action="#{pageFlowScope.DeviceInterfaceTreeBean.getPendingBiSummaryAction}" 
+													  id="isCMI" actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.registerPendingBiRecentItem}"
+													   text="#{pageFlowScope.DeviceInterfaceTreeBean.inventoryStatusBILabel}"
+													   shortDesc="#{pageFlowScope.DeviceInterfaceTreeBean.installingBIShortDesc}"
+													   disabled="#{pageFlowScope.DeviceInterfaceTreeBean.installingBIDisabled}">                        
+										<af:setActionListener from="#{pageFlowScope.DeviceInterfaceTreeBean.invStatusBI.oid}" to="#{objectId}"/>
+									</af:commandImageLink>
+									</f:facet> 
+									 <f:facet name="true">
+									  <af:outputText value="#{pageFlowScope.DeviceInterfaceTreeBean.inventoryStatusBILabel}" id="isOt"/>
+								</f:facet>
+								</af:switcher>
+							  <!--RMI618 Tree changes --> 
+								</af:column>
+								  
+								<af:column sortable="false" headerText="#{inventoryUIBundle.RESOURCE_ASSIGNMENT_STATUS}" id="column7" filterable="false">
+								  <af:outputText value="#{node.data.raStatus}" id="ot324"/>
+								<!--RMI618 Tree changes -->
+								<af:outputText value="#{pageFlowScope.DeviceInterfaceTreeBean.assignmentStatusBIDueDate}" id="asDueDate"/>
+								<af:switcher id="asSwitch" defaultFacet="false" facetName="#{pageFlowScope.DeviceInterfaceSummaryBean.popupMode}">
+									<f:facet name="false">
+								 <af:commandImageLink action="#{pageFlowScope.DeviceInterfaceTreeBean.getPendingBiSummaryAction}" 
+													  id="asCMI" actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.registerPendingBiRecentItem}"
+													   text="#{pageFlowScope.DeviceInterfaceTreeBean.assignmentStatusBILabel}"
+													   shortDesc="#{pageFlowScope.DeviceInterfaceTreeBean.consumerBIShortDesc}"
+													   disabled="#{pageFlowScope.DeviceInterfaceTreeBean.consumerBIDisabled}">                        
+										<af:setActionListener from="#{pageFlowScope.DeviceInterfaceTreeBean.asnStatusBI.oid}" to="#{objectId}"/>
+									</af:commandImageLink>
+									</f:facet>
+									 <f:facet name="true">
+									  <af:outputText value="#{pageFlowScope.DeviceInterfaceTreeBean.assignmentStatusBILabel}" id="asOt"/>
+								</f:facet>
+								</af:switcher> 
+								<!--  RMI618 Tree changes --> 
+								</af:column>
+								<!--10285312  changes End  -->
+							  
+								 <af:column sortable="false" headerText="#{inventoryUIBundle.CONSUMERS}" id="colun3" filterable="false">
+								   <af:iterator id="it123" value="#{node.data.consumers}" var="consumer">
+									 <af:link actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.viewConsumer}" action="#{pageFlowScope.DeviceInterfaceTreeBean.getConsumerAction}" id="cn16"
+													 shortDesc="#{inventoryUIBundle.LINK_FOR_SUMMARY}">
+										<af:outputText value="#{consumer.label}" id="onn312" binding="#{pageFlowScope.consumer}"/>
+										<f:param name="consumerOid" value="#{consumer.object.oid}" id="par222"/>
+									 </af:link>
+										 <af:switcher id="consumerSwitcher" defaultFacet="false" facetName="#{consumer.invStatus != null}">
+										<f:facet name="true">           
+										  <af:outputText value=" (#{consumer.invStatus})" />
+										</f:facet> 
+										 <f:facet name="false">           
+											<af:outputText value=" " />
+										</f:facet> 
+									 </af:switcher>  
+									 <br></br>
+								   </af:iterator>  
+								 </af:column>
+							
+								 <!--Bug # - 12790138  Start -->
+								 <af:column sortable="false" headerText="#{inventoryUIBundle.MAPPED_TO}" id="colun4" filterable="false" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}">
+								   <!--<af:iterator id="it124" value="#{node.data.mappedResources}" var="mappedresource">
+									 <af:link actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.viewMappedResource}" action="#{pageFlowScope.DeviceInterfaceTreeBean.getMappedResourceAction}" id="cn17"
+													 shortDesc="#{inventoryUIBundle.LINK_FOR_SUMMARY}">
+										<af:outputText value="#{mappedresource.displayInfo}" id="onn313" />
+										<f:param name="mappedresourceOid" value="#{mappedresource.oid}" id="par223"/>
+									 </af:link>
+									 <br></br>
+								   </af:iterator>  -->
+								   
+								   
+								 <af:link actionListener="#{pageFlowScope.LogicalDeviceTreeBean.invokeActionPopupFromMappedToColumn}" id="cn17"
+												 shortDesc="#{inventoryUIBundle.LINK_FOR_SUMMARY}">
+									<af:outputText value="#{pageFlowScope.LogicalDeviceTreeBean.mappedToPortConnectorSize} #{inventoryUIBundle.PHYSICAL_PORT_CONNECTOR}" id="onn313" 
+									rendered="#{pageFlowScope.LogicalDeviceTreeBean.mappedToPortConnectorSize gt 1}"/>
+									<af:setActionListener from="popupRemoveMappingsBinding" to="#{pageFlowScope.invokedPopupId}" />
+								 </af:link>
+								 
+								 <af:link action="#{pageFlowScope.DeviceInterfaceTreeBean.getMappedResourceAction}" shortDesc="#{inventoryUIBundle.LINK_FOR_SUMMARY}"
+															   actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.viewMappedResource}" text="#{pageFlowScope.LogicalDeviceTreeBean.portConnectorMappable.displayInfo}" id="onn3139" 
+									rendered="#{pageFlowScope.LogicalDeviceTreeBean.mappedToPortConnectorSize eq 1}">
+									<f:param name="mappedresourceOid" value="#{pageFlowScope.LogicalDeviceTreeBean.portConnectorMappable.oid}" id="par223"/>
+								 </af:link>
+								   
+								   
+								 </af:column>
+								 <!--Bug # - 12790138  End -->
+								 
+								 <af:column sortable="false" headerText="#{inventoryUIBundle.IP_ADDRESS}" id="cn3" filterable="false">
+									 <af:switcher id="ipSwitcher" defaultFacet="false" facetName="#{node.data.ipAddressSwitcher}">
+										<f:facet name="false">
+										   <af:iterator value="#{node.data.ipAddressList}" var="ipresource">
+											 <af:link actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.viewIPAddress}" action="#{pageFlowScope.DeviceInterfaceTreeBean.getIpResourceAction}" id="cn19"
+															 shortDesc="#{inventoryUIBundle.LINK_FOR_SUMMARY}">
+												<af:outputText value="#{node.data.ipAddressLabel}" id="ot82"/>
+												<f:param name="resourceOid" value="#{ipresource.oid}" id="p22"/>
+												<f:param name="displayInfo" value="#{ipresource.displayInfo}" id="p23"/>
+											 </af:link>
+											 <br></br>
+										   </af:iterator>  
+										 </f:facet>
+										 <f:facet name="true">
+											<af:link id="cn49" shortDesc="#{inventoryUIBundle.LINK_FOR_SUMMARY}" actionListener="#{pageFlowScope.DeviceInterfaceSummaryBean.goToIPResources}">
+												<af:outputText value="#{node.data.ipAddressLabel}" id="ot812"/>
+											 </af:link>
+										 </f:facet>
+									 </af:switcher>
+								</af:column>
+								 
+							  <f:facet name="contextMenu">
+								<af:popup contentDelivery="lazyUncached" id="popupContext"
+										  partialTriggers="::DeviceInterfaceHierarchyTreeTable">
+								  <!--Root node menu Starts -->
+								  <af:menu id="rootNodeMenu" text="rootNodeMenu">
+									
+									<af:commandMenuItem text="#{inventoryUIBundle.DI_CREATE_SUBDEVICE_INTERFACE}"
+														id="rootmenuItem1" selected="true"
+														rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary and pageFlowScope.DeviceInterfaceTreeBean.rootNodePopupMenu and securityContext.userGrantedResource['resourceType=PAGE_ACTION;resourceName=DeviceInterface.ASSOCIATE_DI;action=view']}">
+									  <af:setActionListener from="true" to="#{pageFlowScope.invokeDI2}"/>
+									 <af:showPopupBehavior triggerType="click" popupId="::popupDIId"/>  
+									</af:commandMenuItem>
+								  <!--Root node menu Ends -->
+								  <!--Child DI node menu Starts -->
+									<af:commandMenuItem id="deleteDI"
+														text="#{inventoryUIBundle.DI_DELETE_DEVICE_INTERFACE}"
+														actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.removeFromDeviceInterface}"
+														rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary and pageFlowScope.DeviceInterfaceTreeBean.childNodePopupMenu and securityContext.userGrantedResource['resourceType=PAGE_ACTION;resourceName=DeviceInterface.DISASSOCIATE_DI;action=view']}">
+									</af:commandMenuItem>
+									
+									<af:commandMenuItem id="createSubDI" selected="true"
+														text="#{inventoryUIBundle.DI_CREATE_SUBDEVICE_INTERFACE}" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary and pageFlowScope.DeviceInterfaceTreeBean.childNodePopupMenu and securityContext.userGrantedResource['resourceType=PAGE_ACTION;resourceName=DeviceInterface.ASSOCIATE_DI;action=view']}">
+									 <af:setActionListener from="true" to="#{pageFlowScope.invokeDI2}"/>
+									 <af:showPopupBehavior triggerType="click" popupId="::popupDIId"/>                         
+									</af:commandMenuItem>
+									
+									<af:commandMenuItem id="cmi11" text="#{inventoryUIBundle.ASSIGN_IPV4_ADDRESS}"
+														actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.launchIPv4AddressSearchPopup}">
+										<af:setPropertyListener type="action" from="true" to="#{pageFlowScope.invokeIPv4Address}"/>
+										<!--af:showPopupBehavior triggerType="click" popupId="::assignIPv4AddressPopup"/-->                         
+									</af:commandMenuItem>
+									
+									<af:commandMenuItem id="cmi12" text="#{inventoryUIBundle.ASSIGN_IPV4_SUBNET}"
+														actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.launchIPv4SubnetPopup}">
+										<af:setPropertyListener type="action" from="true" to="#{pageFlowScope.invokeIPv4Subnet}"/>
+										<!--af:showPopupBehavior triggerType="click" popupId="::assignIPv4SubnetPopup"/-->                         
+									</af:commandMenuItem>
+									 <af:commandMenuItem id="cmi13" text="#{inventoryUIBundle.ASSIGN_IPV6_ADDRESS}"
+														actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.launchIPv6AddressSearchPopup}">
+										<af:setPropertyListener type="action" from="true" to="#{pageFlowScope.invokeIPv6Address}"/>                     
+									</af:commandMenuItem>
+									
+									<af:commandMenuItem id="cmi14" text="#{inventoryUIBundle.ASSIGN_IPV6_SUBNET}"
+														actionListener="#{pageFlowScope.DeviceInterfaceTreeBean.launchIPv6SubnetPopup}">
+										<af:setPropertyListener type="action" from="true" to="#{pageFlowScope.invokeIPv6Subnet}"/>
+								
+									</af:commandMenuItem>
+									
+								  </af:menu>
+								</af:popup>
+							  </f:facet>
+							</af:treeTable>
+							<!--Popup Starts -->
+							 <af:popup id="popupDIId" contentDelivery="lazyUncached"
+									  binding="#{backingBeanScope.diSummary_popupDIBinding}"
+									  clientComponent="true">
+							  <af:dialog id="dialog1" type="none"
+										 title="#{inventoryUIBundle.DEVICE_INTERFACE}">
+							  <af:panelStretchLayout id="psl_19" styleClass="invEditPanelStretchLayout">
+							  <f:facet name="center">                  
+										 <af:region value="#{bindings.DeviceInterfaceEditFlow2.regionModel}"
+												   id="r5"/>
+									  </f:facet>
+							  </af:panelStretchLayout>
+							  </af:dialog>
+							   <af:clientListener method="goRefreshEntity"
+												   type="popupClosed"/>
+							  <af:serverListener type="refreshEntity"
+												   method="#{pageFlowScope.DeviceInterfaceTreeBean.refreshTree}"/>
+							 </af:popup>
+							 
+							 <af:popup id="assignIPv4AddressPopup" binding="#{backingBeanScope.IPv4DIAddressBinding}"
+									clientComponent="true" contentDelivery="lazyUncached">
+								<af:dialog id="ipv4AddressConfig" type="none" title="#{inventoryUIBundle.IPV4_ADDRESS}">
+								  <af:panelStretchLayout id="pt_ps34" styleClass="invConfigResourceStretchLayout">
+									  <f:facet name="center">
+										<af:region value="#{bindings.IPv4AddressSearchResultsFlow1.regionModel}" id="r9"/>
+									  </f:facet>
+								  </af:panelStretchLayout>
+								</af:dialog>
+								<af:clientListener method="goRefreshEntity" type="popupClosed"/>
+								<af:serverListener type="refreshEntity" method="#{pageFlowScope.DeviceInterfaceTreeBean.refreshTree}"/>
+							  </af:popup>
+							  
+							  <af:popup id="assignIPv4SubnetPopup" binding="#{backingBeanScope.IPv4DISubnetPopupBinding}"
+									clientComponent="true" contentDelivery="lazyUncached">
+								<af:dialog id="ipv4SubnetConfig" type="none" title="#{inventoryUIBundle.IPv4_SUBNET}">
+								  <af:panelStretchLayout id="pt_ps35" styleClass="invConfigResourceStretchLayout">
+									<f:facet name="center">
+										<af:region value="#{bindings.IPv4SubnetSearchResultsFlow1.regionModel}" id="r10"/>
+									  </f:facet>
+								  </af:panelStretchLayout>
+								</af:dialog>
+								<af:clientListener method="goRefreshEntity" type="popupClosed"/>
+								<af:serverListener type="refreshEntity" method="#{pageFlowScope.DeviceInterfaceTreeBean.refreshTree}"/>
+							  </af:popup>
+							  <af:popup id="assignIPv6AddressPopup" binding="#{backingBeanScope.IPv6DIAddressBinding}"
+									clientComponent="true" contentDelivery="lazyUncached">
+								<af:dialog id="ipv6AddressConfig" type="none" title="#{inventoryUIBundle.IPV6_ADDRESS}">
+								  <af:panelStretchLayout id="pt_ps36" styleClass="invConfigResourceStretchLayout">
+									  <f:facet name="center">
+										<af:region value="#{bindings.IPv6AddressSearchResultsFlow1.regionModel}" id="r11"/>
+									  </f:facet>
+								  </af:panelStretchLayout>
+								</af:dialog>
+								<af:clientListener method="goRefreshEntity" type="popupClosed"/>
+								<af:serverListener type="refreshEntity" method="#{pageFlowScope.DeviceInterfaceTreeBean.refreshTree}"/>
+							  </af:popup>
+							  
+							  <af:popup id="assignIPv6SubnetPopup" binding="#{backingBeanScope.IPv6DISubnetPopupBinding}"
+									clientComponent="true" contentDelivery="lazyUncached">
+								<af:dialog id="ipv6SubnetConfig" type="none" title="#{inventoryUIBundle.IPv6_SUBNET}">
+								  <af:panelStretchLayout id="pt_ps37" styleClass="invConfigResourceStretchLayout">
+									<f:facet name="center">
+										<af:region value="#{bindings.IPv6SubnetSearchResultsFlow1.regionModel}" id="r12"/>
+									  </f:facet>
+								  </af:panelStretchLayout>
+								</af:dialog>
+								<af:clientListener method="goRefreshEntity" type="popupClosed"/>
+								<af:serverListener type="refreshEntity" method="#{pageFlowScope.DeviceInterfaceTreeBean.refreshTree}"/>
+							  </af:popup>
+						   
+						   
+						   <af:popup id="removeMappingsPopupId"  contentDelivery="lazyUncached"
+									  binding="#{backingBeanScope.popupRemoveMappingsBinding}"
+									  clientComponent="true">
+							   <af:dialog id="d2" type="none"
+										  title="#{inventoryUIBundle.DEVICE_MAPPINGS_LIST}">
+								<af:panelStretchLayout id="psl8" styleClass="invEditPanelStretchLayout">
+									  <f:facet name="center">
+									  <af:region value="#{bindings.DeviceMappingListFlow1.regionModel}"
+												 id="r14"/></f:facet></af:panelStretchLayout>
+							   </af:dialog> 
+							</af:popup>
+							<!-- Popup Ends-->
+						  </af:panelCollection>
+						</af:showDetailHeader>
+					</af:showDetailItem>
+					
+					<af:showDetailItem text="#{inventoryUIBundle.CONFIGURATIONS}" id="ConfigurationsTab" styleClass="AFStretchWidth" binding="#{backingBeanScope.deviceinterface_configTab}" 
+						rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary and !pageFlowScope.DeviceInterfaceSummaryBean.previewLayout}"
+						disclosureListener="#{pageFlowScope.DeviceInterfaceSummaryBean.discloseTab}" 
+						disclosed="#{pageFlowScope.DeviceInterfaceSummaryBean.selectedTab == inventoryUIBundle.CONFIGURATIONS}">
+						<!-- CONFIGURATIONS -->
+						<af:region value="#{bindings.ConfigurationListFlow1.regionModel}" id="r4" rendered="#{!pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}"/>
+					</af:showDetailItem>
+					
+					<af:showDetailItem text="#{inventoryUIBundle.ASSOCIATED_RESOURCES}" id="AssocResourcesTab" styleClass="AFStretchWidth" binding="#{backingBeanScope.deviceinterface_resourcesTab}" 
+						rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.renderAssociatedResourcesTab}" disclosureListener="#{pageFlowScope.DeviceInterfaceSummaryBean.discloseTab}" 
+						disclosed="#{pageFlowScope.DeviceInterfaceSummaryBean.selectedTab == inventoryUIBundle.ASSOCIATED_RESOURCES}">						
+						 <!--IP RESOURCES-->						
+						 <af:region value="#{bindings.IPResourceListFlow1.regionModel}" id="r8" binding="#{backingBeanScope.ipDIRegionBinding}"/>
+						 <af:spacer width="10" height="10"/>
+						 <!--NETWORKS-->						
+						 <af:region value="#{bindings.NetworkListFlow1.regionModel}" id="r7"/>
+						 <af:spacer width="10" height="10"/>
+						 <!--CUSTOM INVOLVEMENTS-->						
+						 <af:region value="#{bindings.CustomInvolvementListFlow1.regionModel}" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}" id="r3"/>						
+					</af:showDetailItem>
+					
+					<af:showDetailItem text="#{inventoryUIBundle.CONSUMERS}" id="AssignmentsTab" styleClass="AFStretchWidth" binding="#{backingBeanScope.deviceinterface_consumersTab}"
+						rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.renderConsumersTab}" disclosureListener="#{pageFlowScope.DeviceInterfaceSummaryBean.discloseTab}" 
+						disclosed="#{pageFlowScope.DeviceInterfaceSummaryBean.selectedTab == inventoryUIBundle.CONSUMERS}">
+						<!--ASSIGNMENTS-->
+                                                    <af:region value="#{bindings.ConsumerListFlow1.regionModel}" id="r17"/>
+                                                    <af:spacer width="10" height="10"/>
+                                                    <!--REFERENCES-->
+                                                    <af:region value="#{bindings.ReferenceListFlow1.regionModel}" id="r81"/>
+                                                    <af:spacer width="10" height="10"/>
+                                                <!-- BUSINESS INTERACTIONS -->
+						<af:region value="#{bindings.BusinessInteractionListFlow1.regionModel}" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}" id="r6"/>	
+					</af:showDetailItem>
+					
+					<af:showDetailItem text="#{inventoryUIBundle.GROUPS_AND_INFRASTRUCTURE}" id="GroupsTab" styleClass="AFStretchWidth" binding="#{backingBeanScope.deviceinterface_groupInfraTab}"
+						rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.renderGroupsTab}" disclosureListener="#{pageFlowScope.DeviceInterfaceSummaryBean.discloseTab}" 
+						disclosed="#{pageFlowScope.DeviceInterfaceSummaryBean.selectedTab == inventoryUIBundle.GROUPS_AND_INFRASTRUCTURE}">
+						<!-- PLACES -->
+						<af:region value="#{bindings.PlaceListFlow1.regionModel}" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}" id="r1"/>
+						<af:spacer width="10" height="10"/>
+						<!-- INVENTORY ROLE -->
+						<af:region value="#{bindings.InventoryRoleListFlow1.regionModel}" rendered="#{pageFlowScope.DeviceInterfaceSummaryBean.deviceInterfaceSummary}" id="r2"/>
+					</af:showDetailItem>	
+				</af:panelTabbed>
+            </af:panelGroupLayout>
+         </af:panelHeader>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="contextualArea"/>
+  </af:pageTemplate>
+</jsp:root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inventory="http://xmlns.oracle.com/communications/studio/model/inventory" xmlns:model="http://xmlns.oracle.com/communications/studio/model">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="inventory:RulesetExtensionPoint" id="rep=MAP_CUSTOM_SERVICE_ACTION_TO_UIM_ACTION" type="rep" typeName="Ruleset Extension Point" name="MAP_CUSTOM_SERVICE_ACTION_TO_UIM_ACTION" resource="\TSARO_Access_Service\model\MAP_CUSTOM_SERVICE_ACTION_TO_UIM_ACTION.rst">
+    <note lang="default"/>
+    <project>
+      <relation ref="ivprj=TSARO_Access_Service" type="Inventory Project" name="Dependency">
+        <target name="TSARO_Access_Service" typeName="Inventory Project"/>
+      </relation>
+    </project>
+    <point>
+      <relation ref="ep=BusinessInteractionManager_getEntityAction" type="Extension Point" name="Point" kind="Entity">
+        <target name="BusinessInteractionManager_getEntityAction" typeName="Extension Point"/>
+      </relation>
+    </point>
+    <ruleset>
+      <relation ref="rul=MAP_SERVICE_ACTION" type="Ruleset" name="Rules" kind="Entity">
+        <target name="MAP_SERVICE_ACTION" typeName="Ruleset"/>
+      </relation>
+    </ruleset>
+  </entity>
+</model:Model>

@@ -1,0 +1,78 @@
+<?xml version = '1.0'?>
+<mds:customization version="11.1.1.59.23" xmlns:mds="http://xmlns.oracle.com/mds">
+   <mds:move node="logdev-totalCapacity" after="logdev-modelNumber"/>
+   <mds:move node="logdev-capacityConsumed" after="logdev-totalCapacity"/>
+   <mds:move node="logdev-percentageConsumed" after="logdev-capacityConsumed"/>
+   <mds:insert after="logdev-percentageConsumed" parent="logdev">
+      <af:panelLabelAndMessage xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="logdev-dummy-7-1" label=" " styleClass="UIHintsSummaryPANEL_LABEL_AND_MESSAGE">
+         <af:outputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="x-logdev-dummy-7-1" value=" "/>
+      </af:panelLabelAndMessage>
+   </mds:insert>
+   <mds:modify element="logdev">
+      <mds:attribute name="rows" value="8"/>
+      <mds:attribute name="maxColumns" value="2"/>
+      <mds:attribute name="labelAlignment" value="start"/>
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_FORM_LAYOUT"/>
+   </mds:modify>
+   <mds:modify element="logdev-lmd">
+      <mds:attribute name="rendered" value="false"/>
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-di">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-ras">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-al1">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-cru">
+      <mds:attribute name="rendered" value="false"/>
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-specification">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-percentageConsumed">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-vendorName">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-nel">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-crd">
+      <mds:attribute name="rendered" value="false"/>
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-lmu">
+      <mds:attribute name="rendered" value="false"/>
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-totalCapacity">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-adminState">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-partNumber">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-modelNumber">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-capacityConsumed">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-id">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-name">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="logdev-description">
+      <mds:attribute name="styleClass" value="UIHintsSummaryPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+</mds:customization>

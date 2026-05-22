@@ -1,0 +1,22 @@
+package oracle.communications.inventory.rules
+ 
+import oracle.communications.inventory.api.framework.logging.Log;
+import oracle.communications.inventory.extensibility.extension.util.ExtensionPointRuleContext;
+import com.tsaro.custom.service.map.MapServiceActions;
+ 
+ 
+global Log log;
+ 
+rule "MAP_SERVICE_ACTION"
+	salience 0
+when
+    	context : ExtensionPointRuleContext()      
+then 
+    MapServiceActions mapServiceActions= new MapServiceActions();
+    String finalAction=mapServiceActions.mapCustomServiceActionsToUIMActions(context, log);
+    context.setReturnValue(finalAction);
+    
+    System.out.println("finalAction :"+finalAction);
+    
+    
+end

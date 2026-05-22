@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/nso-managers.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-managers.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/ora_uim_commonLib.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-webservices-base.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-webservices-framework-xsd.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-tools.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-webservices-rest-adapter.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-webservices-rest-framework.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-entities.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-caps.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-webservices-adapter-rpc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-webservices-framework.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-entity-xmlbean.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/capacity_caps.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/characteristic_caps.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/consumable_caps.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/core_caps.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/groupenabled_caps.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/uim-api-framework.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/comms-platform-ui.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/persistence.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/platform_managers.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/platform-persistence.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/platformWsFramework.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/poms.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/ies.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/dom4j-2.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/aspectjtools.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/aspectjweaver.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/gson-2.13.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/sdoapi.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/UIM_SDK_7.8/UIM_SDK/lib/xmlbeans-5.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/Downloads/Jars_For_CW 3/Jars_For_CW/javax.transaction.javax.transaction-api.jar"/>
+	<classpathentry kind="output" path="out"/>
+</classpath>

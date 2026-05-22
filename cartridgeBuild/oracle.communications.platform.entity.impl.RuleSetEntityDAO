@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extent>
+  <object class="oracle.communications.platform.entity.impl.RuleSetEntityDAO" guid="http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/VALIDATE_ACCESS_RULESET.ruleset#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.RuleSetEntityDAO-0" version="0">
+    <field name="name">"VALIDATE_ACCESS_RULESET"</field>
+    <field mode="skip" name="extensionPointRuleSets"/>
+    <field name="description">null</field>
+    <field name="type">null</field>
+    <field name="active">true</field>
+    <field name="xml">"package oracle.communications.inventory.rules&#13;
+ &#13;
+import oracle.communications.inventory.api.framework.logging.Log;&#13;
+import oracle.communications.inventory.extensibility.extension.util.ExtensionPointContext;&#13;
+import com.tsaro.uim.ValidateAccessCaptureRequest;&#13;
+ &#13;
+ &#13;
+global Log log;&#13;
+ &#13;
+rule "Validate VALIDATECAPTUREINTERACTION"&#13;
+	salience 0&#13;
+when&#13;
+    	context : ExtensionPointContext()      &#13;
+then &#13;
+    ValidateAccessCaptureRequest validateAccRequest= new ValidateAccessCaptureRequest();&#13;
+    validateAccRequest.validateRequest(context, log);&#13;
+end"</field>
+    <field format="enum_name" name="runExtensionLanguage">DROOLS</field>
+    <field name="extensionContent">""</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.RuleSetEntityDAO" guid="http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/MAP_SERVICE_ACTION.ruleset#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.RuleSetEntityDAO-1" version="0">
+    <field name="name">"MAP_SERVICE_ACTION"</field>
+    <field mode="skip" name="extensionPointRuleSets"/>
+    <field name="description">null</field>
+    <field name="type">null</field>
+    <field name="active">true</field>
+    <field name="xml">"package oracle.communications.inventory.rules&#13;
+ &#13;
+import oracle.communications.inventory.api.framework.logging.Log;&#13;
+import oracle.communications.inventory.extensibility.extension.util.ExtensionPointRuleContext;&#13;
+import com.tsaro.custom.service.map.MapServiceActions;&#13;
+ &#13;
+ &#13;
+global Log log;&#13;
+ &#13;
+rule "MAP_SERVICE_ACTION"&#13;
+	salience 0&#13;
+when&#13;
+    	context : ExtensionPointRuleContext()      &#13;
+then &#13;
+    MapServiceActions mapServiceActions= new MapServiceActions();&#13;
+    String finalAction=mapServiceActions.mapCustomServiceActionsToUIMActions(context, log);&#13;
+    context.setReturnValue(finalAction);&#13;
+    &#13;
+    System.out.println("finalAction :"+finalAction);&#13;
+    &#13;
+    &#13;
+end"</field>
+    <field format="enum_name" name="runExtensionLanguage">DROOLS</field>
+    <field name="extensionContent">""</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.RuleSetEntityDAO" guid="http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/SUSPEND_ACCESS_SERVICE.ruleset#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.RuleSetEntityDAO-2" version="0">
+    <field name="name">"SUSPEND_ACCESS_SERVICE"</field>
+    <field mode="skip" name="extensionPointRuleSets"/>
+    <field name="description">null</field>
+    <field name="type">null</field>
+    <field name="active">true</field>
+    <field name="xml">"package oracle.communications.inventory.rules&#13;
+ &#13;
+import oracle.communications.inventory.api.framework.logging.Log;&#13;
+import oracle.communications.inventory.extensibility.extension.util.ExtensionPointContext;&#13;
+import com.tsaro.service.cfs.design.AccessCFSDesigner;&#13;
+ &#13;
+ &#13;
+global Log log;&#13;
+ &#13;
+rule "DESIGN_CFS_SERVICE"&#13;
+	salience 0&#13;
+when&#13;
+    	context : ExtensionPointContext()      &#13;
+then &#13;
+    &#13;
+    &#13;
+    AccessCFSDesigner accessCFSDesigner= new AccessCFSDesigner();&#13;
+    System.out.println("calling suspend method");&#13;
+    accessCFSDesigner.suspend(context,log);&#13;
+end"</field>
+    <field format="enum_name" name="runExtensionLanguage">DROOLS</field>
+    <field name="extensionContent">""</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.RuleSetEntityDAO" guid="http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/DESIGN_CFS_SERVICE.ruleset#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.RuleSetEntityDAO-3" version="0">
+    <field name="name">"DESIGN_CFS_SERVICE"</field>
+    <field mode="skip" name="extensionPointRuleSets"/>
+    <field name="description">null</field>
+    <field name="type">null</field>
+    <field name="active">true</field>
+    <field name="xml">"package oracle.communications.inventory.rules&#13;
+ &#13;
+import oracle.communications.inventory.api.framework.logging.Log;&#13;
+import oracle.communications.inventory.extensibility.extension.util.ExtensionPointContext;&#13;
+import com.tsaro.service.cfs.design.AccessCFSDesigner;&#13;
+ &#13;
+ &#13;
+global Log log;&#13;
+ &#13;
+rule "DESIGN_CFS_SERVICE"&#13;
+	salience 0&#13;
+when&#13;
+    	context : ExtensionPointContext()      &#13;
+then &#13;
+    &#13;
+    &#13;
+    AccessCFSDesigner accessCFSDesigner= new AccessCFSDesigner();&#13;
+    System.out.println("calling design method");&#13;
+    accessCFSDesigner.design(context,log);&#13;
+end"</field>
+    <field format="enum_name" name="runExtensionLanguage">DROOLS</field>
+    <field name="extensionContent">""</field>
+  </object>
+</extent>

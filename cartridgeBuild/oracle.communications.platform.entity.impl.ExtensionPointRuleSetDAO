@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extent>
+  <object class="oracle.communications.platform.entity.impl.ExtensionPointRuleSetDAO" oid="oracle.communications.platform.entity.impl.ExtensionPointRuleSetDAO-0" version="0">
+    <field format="enum_name" name="type">BEFORE</field>
+    <field name="extensionPoint">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/ora_uim_baseextpts/model/BusinessInteractionManager_createBusinessInteractionAttachment.rstp#7.8.0.0.0_b0</field>
+    <field name="ruleSetEntity">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.RuleSetEntityDAO-0</field>
+    <field name="specification">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/AccessService_BI.bi#1.0.0.0.0_b0</field>
+    <field name="sequence">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.ExtensionPointRuleSetDAO" oid="oracle.communications.platform.entity.impl.ExtensionPointRuleSetDAO-1" version="0">
+    <field format="enum_name" name="type">INSTEAD</field>
+    <field name="extensionPoint">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/ora_uim_baseextpts/model/BusinessInteractionManager_getEntityAction.rstp#7.8.0.0.0_b0</field>
+    <field name="ruleSetEntity">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.RuleSetEntityDAO-1</field>
+    <field name="specification">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_CFS.service#1.0.0.0.0_b0</field>
+    <field name="sequence">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.ExtensionPointRuleSetDAO" oid="oracle.communications.platform.entity.impl.ExtensionPointRuleSetDAO-2" version="0">
+    <field format="enum_name" name="type">AFTER</field>
+    <field name="extensionPoint">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/ora_uim_baseextpts/model/ServiceManager_suspendService.rstp#7.8.0.0.0_b0</field>
+    <field name="ruleSetEntity">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.RuleSetEntityDAO-2</field>
+    <field name="specification">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_CFS.service#1.0.0.0.0_b0</field>
+    <field name="sequence">0</field>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.ExtensionPointRuleSetDAO" oid="oracle.communications.platform.entity.impl.ExtensionPointRuleSetDAO-3" version="0">
+    <field format="enum_name" name="type">INSTEAD</field>
+    <field name="extensionPoint">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/ora_uim_baseextpts/model/BaseConfigurationManager_automateConfiguration.rstp#7.8.0.0.0_b0</field>
+    <field name="ruleSetEntity">oracle.communications.platform.ies.xfile.OID:oracle.communications.platform.entity.impl.RuleSetEntityDAO-3</field>
+    <field name="specification">oracle.communications.platform.ies.xfile.GUID:http://xmlns.oracle.com/cgbu/inventory/nowhere/TSARO_Access_Service/model/Access_CFS_Configuration.configuration#1.0.0.0.0_b0</field>
+    <field name="sequence">0</field>
+  </object>
+</extent>

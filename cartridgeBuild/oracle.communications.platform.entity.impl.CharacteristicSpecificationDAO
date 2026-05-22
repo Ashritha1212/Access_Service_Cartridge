@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extent>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/peDeviceName.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-0" version="0">
+    <field name="name">"peDeviceName"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659944</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Pe Device Name"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/switchHostName.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-1" version="0">
+    <field name="name">"switchHostName"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659945</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Switch Host Name"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/oltDevice.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-2" version="0">
+    <field name="name">"oltDevice"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659945</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Olt Device"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/mwType.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-3" version="0">
+    <field name="name">"mwType"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659946</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Mw Type"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/mediaType.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-4" version="0">
+    <field name="name">"mediaType"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659946</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Media Type"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/OLTDeviceName.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-5" version="0">
+    <field name="name">"OLTDeviceName"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659947</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"OLTDevice Name"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/MediaType.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-6" version="0">
+    <field name="name">"MediaType"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659947</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Media Type"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/PeDeviceName.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-7" version="0">
+    <field name="name">"PeDeviceName"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659947</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Pe Device Name"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/SwitchHostName.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-8" version="0">
+    <field name="name">"SwitchHostName"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659948</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Switch Host Name"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/OltDevceName.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-9" version="0">
+    <field name="name">"OltDevceName"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659948</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Olt Devce Name"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+  <object class="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO" guid="http://xmlns.oracle.com/communications/sce/dictionary/TSARO_Access_Service/TSARO_Access_Service/serviceAction.characteristic#1.0.0.0.0_b0" oid="oracle.communications.platform.entity.impl.CharacteristicSpecificationDAO-10" version="0">
+    <field name="name">"serviceAction"</field>
+    <field name="id">null</field>
+    <field name="description">""</field>
+    <field name="startDate">1779355659948</field>
+    <field name="minQty">0</field>
+    <field name="maxQty">1</field>
+    <field name="derivationFormula">null</field>
+    <field name="restrictedAssociationToSpec">false</field>
+    <field name="multiValued">false</field>
+    <field mode="skip" name="characteristicSpecUsages"/>
+    <field mode="skip" name="childCharSpecRels"/>
+    <field name="passwordType">false</field>
+    <field format="enum_name" name="primitiveType">STRING</field>
+    <field format="enum_name" name="controlType">TEXT_FIELD</field>
+    <field format="enum_name" name="valueType">ALPHANUMERIC</field>
+    <field format="enum_name" name="textCase">MIXED</field>
+    <field name="persisted">false</field>
+    <field name="displayLabel">"Service Action"</field>
+    <field name="minLength">0</field>
+    <field name="maxLength">40</field>
+    <field name="values"/>
+  </object>
+</extent>

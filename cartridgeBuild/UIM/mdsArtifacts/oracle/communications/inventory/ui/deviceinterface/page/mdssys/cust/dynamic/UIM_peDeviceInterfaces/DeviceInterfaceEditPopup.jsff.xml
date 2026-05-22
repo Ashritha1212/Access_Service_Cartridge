@@ -1,0 +1,42 @@
+<?xml version = '1.0'?>
+<mds:customization version="11.1.1.59.23" xmlns:mds="http://xmlns.oracle.com/mds">
+   <mds:move node="di-quantity" after="di-adminstate"/>
+   <mds:insert after="di-quantity" parent="di">
+      <af:panelLabelAndMessage xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="di-dummy-4-1" label=" " styleClass="UIHintsEditPANEL_LABEL_AND_MESSAGE">
+         <af:outputText xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="x-di-dummy-4-1" value=" "/>
+      </af:panelLabelAndMessage>
+   </mds:insert>
+   <mds:modify element="di">
+      <mds:attribute name="rows" value="5"/>
+      <mds:attribute name="maxColumns" value="2"/>
+      <mds:attribute name="labelAlignment" value="start"/>
+      <mds:attribute name="styleClass" value="UIHintsEditPANEL_FORM_LAYOUT"/>
+   </mds:modify>
+   <mds:modify element="di-quantity">
+      <mds:attribute name="styleClass" value="UIHintsEditINPUT_TEXT"/>
+   </mds:modify>
+   <mds:modify element="di-specification">
+      <mds:attribute name="styleClass" value="UIHintsEditSELECT_ONE_CHOICE"/>
+   </mds:modify>
+   <mds:modify element="di-interfacenumber">
+      <mds:attribute name="styleClass" value="UIHintsEditINPUT_TEXT"/>
+   </mds:modify>
+   <mds:modify element="di-cin">
+      <mds:attribute name="styleClass" value="UIHintsEditINPUT_TEXT"/>
+   </mds:modify>
+   <mds:modify element="di-vin">
+      <mds:attribute name="styleClass" value="UIHintsEditINPUT_TEXT"/>
+   </mds:modify>
+   <mds:modify element="di-adminstate">
+      <mds:attribute name="styleClass" value="UIHintsEditPANEL_LABEL_AND_MESSAGE"/>
+   </mds:modify>
+   <mds:modify element="di-id">
+      <mds:attribute name="styleClass" value="UIHintsEditINPUT_TEXT"/>
+   </mds:modify>
+   <mds:modify element="di-name">
+      <mds:attribute name="styleClass" value="UIHintsEditINPUT_TEXT"/>
+   </mds:modify>
+   <mds:modify element="di-description">
+      <mds:attribute name="styleClass" value="UIHintsEditINPUT_TEXT"/>
+   </mds:modify>
+</mds:customization>

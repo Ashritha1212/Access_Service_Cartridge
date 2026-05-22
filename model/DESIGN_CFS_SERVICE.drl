@@ -1,0 +1,20 @@
+package oracle.communications.inventory.rules
+ 
+import oracle.communications.inventory.api.framework.logging.Log;
+import oracle.communications.inventory.extensibility.extension.util.ExtensionPointContext;
+import com.tsaro.service.cfs.design.AccessCFSDesigner;
+ 
+ 
+global Log log;
+ 
+rule "DESIGN_CFS_SERVICE"
+	salience 0
+when
+    	context : ExtensionPointContext()      
+then 
+    
+    
+    AccessCFSDesigner accessCFSDesigner= new AccessCFSDesigner();
+    System.out.println("calling design method");
+    accessCFSDesigner.design(context,log);
+end

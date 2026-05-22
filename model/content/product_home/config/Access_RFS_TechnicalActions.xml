@@ -1,0 +1,141 @@
+<act:technicalActionCalculator xmlns:act="http://xmlns.oracle.com/communications/inventory/actioncalculator">
+
+<!-- AccessService actions -->
+	<!--PEDevice is common for all Media Types -->
+	<act:action>
+		<act:name>TA_ACCESS_PE_CREATE</act:name>
+		<act:actionCode>Create</act:actionCode>
+		<act:subject>
+		<act:specification>Access_RFS</act:specification>
+		</act:subject>
+		<act:target>
+		<act:specification>Access_RFS</act:specification>
+		</act:target>
+		<act:parameter>
+			<act:name>mediaType</act:name>
+			<act:type>string</act:type>
+		</act:parameter>
+		<act:parameter>
+			<act:name>peDeviceName</act:name>
+			<act:type>string</act:type>
+		</act:parameter>
+		
+		<act:applicationRole>ASAP</act:applicationRole>
+	</act:action>
+	
+	<act:action>
+		<act:name>TA_SWITCH_ACCESS_FIBER_CREATE</act:name>
+		<act:actionCode>Create</act:actionCode>
+		<act:subject>
+		<act:specification>Access_RFS</act:specification>
+		</act:subject>
+		<act:target>
+		<act:specification>Access_RFS</act:specification>
+		</act:target>
+	<act:parameter>
+			<act:name>mediaType</act:name>
+			<act:type>string</act:type>
+		</act:parameter>
+		<act:parameter>
+			<act:name>switchHostName</act:name>
+			<act:type>string</act:type>
+		</act:parameter>
+		
+		<act:applicationRole>ASAP</act:applicationRole>
+	</act:action>
+	
+	<act:action>
+		<act:name>TA_OLT_ACCESS_GPON_CREATE</act:name>
+		<act:actionCode>Create</act:actionCode>
+		<act:subject>
+		<act:specification>Access_RFS</act:specification>
+		</act:subject>
+		<act:target>
+		<act:specification>Access_RFS</act:specification>
+		</act:target>
+		<act:parameter>
+			<act:name>mediaType</act:name>
+			<act:type>string</act:type>
+		</act:parameter>
+		<act:parameter>
+			<act:name>OLTDeviceName</act:name>
+			<act:type>string</act:type>
+		</act:parameter>
+		<act:applicationRole>ASAP</act:applicationRole>
+	</act:action>
+	
+	
+	<!--AccessService actions -->
+
+	
+	
+	 <act:match>
+		<act:diff>
+			<act:path>/root/after/Access_Devices</act:path>
+		</act:diff>
+		<act:action>TA_ACCESS_PE_CREATE</act:action>
+		<act:action>TA_SWITCH_ACCESS_FIBER_CREATE</act:action>
+		<act:action>TA_OLT_ACCESS_GPON_CREATE</act:action>
+		<act:anchor>..</act:anchor>
+	</act:match>
+
+		
+	
+	
+	<act:generator>
+		<act:action>TA_ACCESS_PE_CREATE</act:action>
+		<act:condition>((/root/after/Access_Devices[mediaType = 'Fiber'] or /root/after/Access_Devices[mediaType = 'GPON'] or /root/after/Access_Devices/mediaType = 'Microwave') 
+		and boolean(count(/root/service[state='PENDING']) > 0)) 
+</act:condition>
+		<act:subject>/root/service</act:subject>
+		<act:target>/root/service</act:target>
+		<act:binding>
+			<act:parameter>mediaType</act:parameter>
+			<act:path>/root/after/Access_Devices/mediaType</act:path>
+		</act:binding>
+		<act:binding>
+			<act:parameter>peDeviceName</act:parameter>
+			<act:path>/root/after/Access_Devices/PeDevice/Assignment[@State='PENDING_ASSIGN']/name</act:path>
+		</act:binding>
+
+	</act:generator>
+	
+	
+	<act:generator>
+		<act:action>TA_SWITCH_ACCESS_FIBER_CREATE</act:action>
+		<act:condition>((/root/after/Access_Devices[mediaType = 'Fiber']  or /root/after/Access_Devices/mediaType = 'Microwave') 
+		and boolean(count(/root/service[state='PENDING']) > 0)) 
+</act:condition>
+		<act:subject>/root/service</act:subject>
+		<act:target>/root/service</act:target>
+		<act:binding>
+			<act:parameter>mediaType</act:parameter>
+			<act:path>/root/after/Access_Devices/mediaType</act:path>
+		</act:binding>
+		<act:binding>
+			<act:parameter>switchHostName</act:parameter>
+			<act:path>/root/after/Access_Devices/SwitchDevice/Assignment[@State='PENDING_ASSIGN']/name</act:path>
+		</act:binding>
+
+	</act:generator>
+	
+	
+	
+	<act:generator>
+		<act:action>TA_OLT_ACCESS_GPON_CREATE</act:action>
+		<act:condition>((/root/after/Access_Devices[mediaType = 'GPON']) 
+		and boolean(count(/root/service[state='PENDING']) > 0)) 
+</act:condition>
+		<act:subject>/root/service</act:subject>
+		<act:target>/root/service</act:target>
+		<act:binding>
+			<act:parameter>mediaType</act:parameter>
+			<act:path>/root/after/Access_Devices/mediaType</act:path>
+		</act:binding>
+		<act:binding>
+			<act:parameter>OLTDeviceName</act:parameter>
+			<act:path>/root/after/Access_Devices/OLTDevice/Assignment[@State='PENDING_ASSIGN']/name</act:path>
+		</act:binding>
+
+	</act:generator>
+</act:technicalActionCalculator>

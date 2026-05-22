@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:data="http://xmlns.oracle.com/communications/studio/model/data" xmlns:model="http://xmlns.oracle.com/communications/studio/model">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="data:DataSchema" id="ds=TSARO_Access_Service" type="ds" typeName="Data Schema" name="TSARO_Access_Service" resource="\TSARO_Access_Service\dataDictionary\TSARO_Access_Service.xsd">
+    <displayName lang="default">TSARO_Access_Service</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="ivprj=TSARO_Access_Service" type="Inventory Project" name="Dependency">
+        <target name="TSARO_Access_Service" typeName="Inventory Project"/>
+      </relation>
+    </project>
+    <dataElements>
+      <element id="ds=TSARO_Access_Service+dataElement=peDeviceName" type="dataElement" typeName="Schema Element" kind="Element" name="peDeviceName" path="/peDeviceName">
+        <displayName lang="default">Pe Device Name</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=switchHostName" type="dataElement" typeName="Schema Element" kind="Element" name="switchHostName" path="/switchHostName">
+        <displayName lang="default">Switch Host Name</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=oltDevice" type="dataElement" typeName="Schema Element" kind="Element" name="oltDevice" path="/oltDevice">
+        <displayName lang="default">Olt Device</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=mwType" type="dataElement" typeName="Schema Element" kind="Element" name="mwType" path="/mwType">
+        <displayName lang="default">Mw Type</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=mediaType" type="dataElement" typeName="Schema Element" kind="Element" name="mediaType" path="/mediaType">
+        <displayName lang="default">Media Type</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=OLTDeviceName" type="dataElement" typeName="Schema Element" kind="Element" name="OLTDeviceName" path="/OLTDeviceName">
+        <displayName lang="default">OLTDevice Name</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=MediaType" type="dataElement" typeName="Schema Element" kind="Element" name="MediaType" path="/MediaType">
+        <displayName lang="default">Media Type</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=PeDeviceName" type="dataElement" typeName="Schema Element" kind="Element" name="PeDeviceName" path="/PeDeviceName">
+        <displayName lang="default">Pe Device Name</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=SwitchHostName" type="dataElement" typeName="Schema Element" kind="Element" name="SwitchHostName" path="/SwitchHostName">
+        <displayName lang="default">Switch Host Name</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=OltDevceName" type="dataElement" typeName="Schema Element" kind="Element" name="OltDevceName" path="/OltDevceName">
+        <displayName lang="default">Olt Devce Name</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+      <element id="ds=TSARO_Access_Service+dataElement=serviceAction" type="dataElement" typeName="Schema Element" kind="Element" name="serviceAction" path="/serviceAction">
+        <displayName lang="default">Service Action</displayName>
+        <minOccurs inherited="false">0</minOccurs>
+        <maxOccurs inherited="false">1</maxOccurs>
+        <defaultValue inherited="false"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="false">false</sensitive>
+        <minLength inherited="false">0</minLength>
+        <maxLength inherited="false">40</maxLength>
+        <dataElements/>
+        <tag>
+          <name>Characteristic</name>
+          <description></description>
+        </tag>
+        <uiSettings>
+          <defaultValue></defaultValue>
+        </uiSettings>
+        <characteristics>
+          <dataValues>
+            <dropDownOptions/>
+          </dataValues>
+        </characteristics>
+        <primitiveType>string</primitiveType>
+      </element>
+    </dataElements>
+  </entity>
+</model:Model>
