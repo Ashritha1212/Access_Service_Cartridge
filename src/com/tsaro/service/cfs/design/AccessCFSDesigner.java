@@ -86,7 +86,7 @@ public class AccessCFSDesigner extends BaseInvManager {
 		Finder f=PersistenceHelper.makeFinder();
 		     
 		
-		cfsService.setParty(arg0);
+		System.out.println("Party assign");
 		
 		//set of party service relation
 		
